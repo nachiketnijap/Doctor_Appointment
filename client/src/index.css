@@ -12,6 +12,85 @@
   z-index: 9999;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+/* Light Theme */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --border-color: #e0e0e0;
+  --input-bg: #f7f7f7;
+  --primary-color: #007bff;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #eaeaea;
+  --border-color: #333333;
+  --input-bg: #1e1e1e;
+  --primary-color: #1e90ff;
+}
+
+/* Apply the theme */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+
+/************************************** notifiaction section ******************************/
+.notification-tabs .ant-tabs-tab {
+  color: inherit; 
+}
+
+[data-theme="dark"] .notification-tabs,
+[data-theme="dark"] .notification-tabs * {
+  color: white !important;
+}
+/* Default (light) mode - keep original color */
+.notification-bell {
+  color: inherit;
+}
+/* Dark mode - change to white */
+[data-theme="dark"] .notification-bell,
+.dark-mode .notification-bell {
+  color: white !important;
+}
+
+
+[data-theme="dark"] table
+  {
+  background-color: #121212 !important;
+  border: 1px solid #353535 !important;
+}
+
+[data-theme="dark"] table{
+  color: white !important;
+}
+/****************************** profile section  ******************************/
+[data-theme="dark"] .profile-row label,
+[data-theme="dark"] .profile-row input,
+[data-theme="dark"]  h4,
+[data-theme="dark"] .profile-row .time-picker {
+  color: white !important;
+}
+
+/* Make input background darker in dark mode */
+
+[data-theme="dark"] .profile-row .time-picker {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+}
+
+/********************** home section **************************************/
+
+[data-theme="dark"] .card{
+  color: white !important;
+}
+
+[data-theme="dark"] .card
+  {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+}

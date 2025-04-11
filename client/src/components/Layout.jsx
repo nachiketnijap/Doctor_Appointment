@@ -3,6 +3,9 @@ import { adminMenu, userMenu } from "../data/data";
 import "../styles/LayoutStyles.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Badge } from "antd";
+import { useState, useEffect } from "react";
+import { MdLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 const Layout = ({ children }) => {
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
@@ -13,7 +16,20 @@ const Layout = ({ children }) => {
     localStorage.clear();
     navigate("/login");
   };
+  // Load the saved theme or default to 'light'
+  const storedTheme = localStorage.getItem("theme") || "light";
+  const [theme, setTheme] = useState(storedTheme);
 
+  // Apply theme to <html> tag & store in localStorage
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // Toggle theme function
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
   // ===========doctor menu===================
   const doctorMenu = [
     {
@@ -69,14 +85,23 @@ const Layout = ({ children }) => {
           <div className="content">
             <div className="header">
               <div className="header-content" style={{ cursor: "pointer" }}>
+                <div>
+                  <button
+                    onClick={toggleTheme}
+                    style={{ padding: "10px 20px", cursor: "pointer" }}
+                  >
+                    {theme === "light" ? <MdDarkMode /> : <MdLightMode />}
+                  </button>
+                </div>
                 <Link to="/profile">{user?.name}</Link>
                 <Badge
+                  className="badge-notification"
                   count={user && user.notification.length}
                   onClick={() => {
                     navigate("/notification");
                   }}
                 >
-                  <i className="fa-solid fa-bell"></i>
+                  <i className="fa-solid fa-bell notification-bell"></i>
                 </Badge>
               </div>
             </div>

@@ -73,7 +73,7 @@ const Profile = () => {
   }, []);
   return (
     <Layout>
-      <h1>Manage Profile</h1>
+      <h1 className="text-center p-2">Manage Profile</h1>
       {doctor && (
         <Form
           layout="vertical"
@@ -88,7 +88,7 @@ const Profile = () => {
           }}
         >
           <h4>Personal Details</h4>
-          <Row gutter={20}>
+          <Row gutter={20} className="profile-row">
             <Col xs={24} md={24} lg={8}>
               <Form.Item
                 label="First Name"
@@ -148,7 +148,7 @@ const Profile = () => {
           </Row>
 
           <h4>Professional Details</h4>
-          <Row gutter={20}>
+          <Row gutter={20} className="profile-row">
             <Col xs={24} md={24} lg={8}>
               <Form.Item
                 label="Specialization"
@@ -186,7 +186,7 @@ const Profile = () => {
                 required
                 rules={[{ required: true }]}
               >
-                <TimePicker.RangePicker format="HH:mm" />
+                <TimePicker.RangePicker className="time-picker" format="HH:mm" />
               </Form.Item>
             </Col>
           </Row>

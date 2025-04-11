@@ -1,5 +1,5 @@
 const express=require('express')
-const { loginController, registerController, authController,applyDoctorController,getAllNotificationController,deleteAllNotificationController, getAllDoctorController, bookAppointmentController, bookingAvailabilityController,userAppointmentsController } = require('../controllers/userController')
+const { loginController, registerController, authController,applyDoctorController,getAllNotificationController,deleteAllNotificationController, getAllDoctorController, bookAppointmentController, bookingAvailabilityController,userAppointmentsController,forgetPassword,resetPassword } = require('../controllers/userController')
 const authMiddleware = require('../middlewares/authMiddleware')
 
 //router object
@@ -40,6 +40,11 @@ router.post('/booking-availability',authMiddleware,bookingAvailabilityController
 // Appointment list
 router.get('/user-appointments',authMiddleware,userAppointmentsController)
 
+// forget password
+router.post("/forget-password", forgetPassword);
+
+// reset password
+router.post("/reset-password/:token", resetPassword);
 
 module.exports =router
 

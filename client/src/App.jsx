@@ -15,6 +15,8 @@ import Profile from "./pages/doctor/Profile";
 import BookingPage from "./pages/BookingPage";
 import Appointments from "./pages/Appointments";
 import DoctorAppointment from "./pages/doctor/DoctorAppointment";
+import ForgetPassword from "./pages/ForgetPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -113,6 +115,15 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route
+              path="/forget-password"
+              element={
+               
+                  <ForgetPassword/>
+                
+              }
+            />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
           </Routes>
         )}
       </BrowserRouter>
