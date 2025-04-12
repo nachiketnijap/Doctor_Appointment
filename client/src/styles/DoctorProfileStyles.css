@@ -1,0 +1,216 @@
+@import './BaseStyles.css';
+
+.profile-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  padding: 2rem;
+}
+
+.profile-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #13aa52 0%, #0f8a3f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card h4 {
+  color: #13aa52;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.profile-form .ant-form-item {
+  margin-bottom: 1.5rem;
+}
+
+.profile-form .ant-form-item-label > label {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.profile-form .ant-input {
+  border-radius: 8px;
+  padding: 10px 15px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.profile-form .ant-input:hover,
+.profile-form .ant-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(19, 170, 82, 0.1);
+}
+
+.profile-form .ant-picker {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.profile-form .btn-primary {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #13aa52 0%, #0f8a3f 100%);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.profile-form .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(19, 170, 82, 0.2);
+}
+
+/* Update Profile Button Row Styles */
+.profile-form .update-row {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.profile-form .update-row .btn-primary {
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  background: linear-gradient(135deg, #13aa52 0%, #0f8a3f 100%);
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.profile-form .update-row .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(19, 170, 82, 0.3);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] .profile-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+[data-theme="dark"] .profile-card {
+  background: var(--dark-card-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .profile-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .profile-card h4 {
+  color: #52ffa8;
+}
+
+[data-theme="dark"] .profile-form .ant-form-item-label > label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .profile-form .ant-input,
+[data-theme="dark"] .profile-form .ant-picker {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .profile-form .ant-input:hover,
+[data-theme="dark"] .profile-form .ant-input:focus,
+[data-theme="dark"] .profile-form .ant-picker:hover,
+[data-theme="dark"] .profile-form .ant-picker-focused {
+  border-color: #52ffa8;
+  box-shadow: 0 0 0 2px rgba(82, 255, 168, 0.1);
+}
+
+[data-theme="dark"] .profile-form .ant-input::placeholder,
+[data-theme="dark"] .profile-form .ant-picker-input input::placeholder {
+  color: #808080;
+}
+
+[data-theme="dark"] .profile-form .ant-picker-input input {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .profile-form .ant-picker-suffix {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .profile-form .update-row .btn-primary {
+  background: linear-gradient(135deg, #52ffa8 0%, #13aa52 100%);
+}
+
+[data-theme="dark"] .profile-form .update-row .btn-primary:hover {
+  box-shadow: 0 6px 16px rgba(82, 255, 168, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+  }
+
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .profile-title {
+    font-size: 2rem;
+  }
+
+  .profile-form .update-row .btn-primary {
+    max-width: 250px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 0.5rem;
+  }
+
+  .profile-card {
+    padding: 1rem;
+  }
+
+  .profile-title {
+    font-size: 1.75rem;
+  }
+
+  .profile-form .update-row .btn-primary {
+    max-width: 200px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+} 
