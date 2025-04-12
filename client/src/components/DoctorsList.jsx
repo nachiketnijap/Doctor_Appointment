@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { FaUserDoctor, FaClock, FaMoneyBillWave, FaGraduationCap } from "react-icons/fa6";
+import "../styles/DoctorCardStyles.css";
 
 const DoctorsList = ({ doctor }) => {
   const navigate = useNavigate();
+
   return (
     <div
       className="doctor-card"
       onClick={() => navigate(`doctor/book-appointment/${doctor._id}`)}
-      key={doctor._id}
     >
       <div className="doctor-card-header">
         <FaUserDoctor className="doctor-icon" />

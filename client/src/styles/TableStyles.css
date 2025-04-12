@@ -1,0 +1,204 @@
+/* Table Container */
+.table-container {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 2rem;
+}
+
+.table-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Table Header */
+.table-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.table-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #13aa52;
+  margin: 0;
+}
+
+/* Table */
+.table {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Header */
+.table .ant-table-thead > tr > th {
+  background: #f8f9fa !important;
+  color: #495057 !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 1rem !important;
+  border-bottom: 1px solid #e9ecef !important;
+}
+
+/* Table Body */
+.table .ant-table-tbody > tr > td {
+  padding: 1rem !important;
+  border-bottom: 1px solid #e9ecef !important;
+  color: #495057;
+}
+
+/* Remove hover effect */
+.table .ant-table-tbody > tr:hover > td {
+  background: transparent !important;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-approved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-approve,
+.btn-reject {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-approve {
+  background: #13aa52;
+  color: white;
+}
+
+.btn-approve:hover {
+  opacity: 0.9;
+}
+
+.btn-reject {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-reject:hover {
+  opacity: 0.9;
+}
+
+/* Dark Theme */
+[data-theme="dark"] .table-container {
+  background: #1a1a1a;
+}
+
+[data-theme="dark"] .table {
+  background: #1a1a1a !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .table .ant-table {
+  background: #1a1a1a !important;
+}
+
+[data-theme="dark"] .table .ant-table-container {
+  background: #1a1a1a !important;
+}
+
+[data-theme="dark"] .table .ant-table-content {
+  background: #1a1a1a !important;
+}
+
+[data-theme="dark"] .table .ant-table-thead > tr > th {
+  background: #1a1a1a !important;
+  color: #e0e0e0 !important;
+  border-bottom: 1px solid #3d3d3d !important;
+}
+
+[data-theme="dark"] .table .ant-table-tbody > tr > td {
+  background: #1a1a1a !important;
+  color: #e0e0e0;
+  border-bottom: 1px solid #3d3d3d !important;
+}
+
+[data-theme="dark"] .table-title {
+  color: #52ffa8;
+}
+
+/* Pagination */
+.table .ant-pagination {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.table .ant-pagination-item {
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.table .ant-pagination-item-active {
+  background: #13aa52;
+  border-color: #13aa52;
+}
+
+.table .ant-pagination-item-active a {
+  color: white;
+}
+
+[data-theme="dark"] .table .ant-pagination-item {
+  background: #1a1a1a;
+  border-color: #3d3d3d;
+}
+
+[data-theme="dark"] .table .ant-pagination-item-active {
+  background: #52ffa8;
+  border-color: #52ffa8;
+}
+
+[data-theme="dark"] .table .ant-pagination-item-active a {
+  color: #1a1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 1rem;
+  }
+
+  .table {
+    padding: 1rem;
+  }
+
+  .table-title {
+    font-size: 1.75rem;
+  }
+
+  .table .ant-table-thead > tr > th,
+  .table .ant-table-tbody > tr > td {
+    padding: 0.75rem !important;
+  }
+} 

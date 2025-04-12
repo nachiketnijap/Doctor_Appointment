@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "./../../components/Layout";
 import axios from "axios";
 import { Table } from "antd";
-import "../../styles/UsersStyles.css";
+import "../../styles/TableStyles.css";
 
 const Users = () => {
   const [user, setUser] = useState([]);
@@ -42,7 +42,7 @@ const Users = () => {
       dataIndex: "isDoctor",
       width: "30%",
       render: (text, record) => (
-        <span className={`status-${record.isDoctor ? "yes" : "no"}`}>
+        <span className={`status-badge status-${record.isDoctor ? "approved" : "rejected"}`}>
           {record.isDoctor ? "Yes" : "No"}
         </span>
       ),
@@ -50,13 +50,13 @@ const Users = () => {
   ];
 
   return (
-    <div className="users-container">
+    <div className="table-container">
       <Layout>
-        <div className="users-content">
-          <div className="users-header">
-            <h1 className="users-title">Users List</h1>
+        <div className="table-content">
+          <div className="table-header">
+            <h1 className="table-title">Users List</h1>
           </div>
-          <div className="users-table">
+          <div className="table">
             <Table
               columns={columns}
               dataSource={user}

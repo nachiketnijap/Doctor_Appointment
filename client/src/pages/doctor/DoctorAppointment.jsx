@@ -4,7 +4,7 @@ import { message } from "antd";
 import axios from "axios";
 import moment from "moment";
 import { Table } from "antd";
-import "../../styles/DoctorAppointmentStyles.css";
+import "../../styles/TableStyles.css";
 
 const DoctorAppointment = () => {
   const [appointments, setAppointments] = useState([]);
@@ -70,7 +70,7 @@ const DoctorAppointment = () => {
       dataIndex: "status",
       width: "20%",
       render: (status) => (
-        <span className={`status-${status.toLowerCase()}`}>
+        <span className={`status-badge status-${status.toLowerCase()}`}>
           {status}
         </span>
       ),
@@ -80,26 +80,26 @@ const DoctorAppointment = () => {
       dataIndex: "actions",
       width: "40%",
       render: (text, record) => (
-        <div className="d-flex">
+        <div className="action-buttons">
           {record.status === "pending" && (
-            <div className="d-flex">
+            <>
               <button
-                className="btn btn-success"
+                className="btn-approve"
                 onClick={() => handleStatus(record, "approved")}
               >
                 Approve
               </button>
               <button
-                className="btn btn-danger mx-2"
+                className="btn-reject"
                 onClick={() => handleStatus(record, "rejected")}
               >
                 Reject
               </button>
-            </div>
+            </>
           )}
           {record.status === "approved" && (
             <button
-              className="btn btn-danger"
+              className="btn-reject"
               onClick={() => handleStatus(record, "rejected")}
             >
               Reject
@@ -107,7 +107,7 @@ const DoctorAppointment = () => {
           )}
           {record.status === "rejected" && (
             <button
-              className="btn btn-success"
+              className="btn-approve"
               onClick={() => handleStatus(record, "approved")}
             >
               Approve
@@ -119,13 +119,13 @@ const DoctorAppointment = () => {
   ];
 
   return (
-    <div className="doctor-appointments-container">
+    <div className="table-container">
       <Layout>
-        <div className="doctor-appointments-content">
-          <div className="doctor-appointments-header">
-            <h1 className="doctor-appointments-title">Appointments</h1>
+        <div className="table-content">
+          <div className="table-header">
+            <h1 className="table-title">Appointments</h1>
           </div>
-          <div className="doctor-appointments-table">
+          <div className="table">
             <Table
               columns={columns}
               dataSource={appointments}

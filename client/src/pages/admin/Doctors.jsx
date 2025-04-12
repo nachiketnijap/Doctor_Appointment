@@ -1,7 +1,9 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import axios from "axios";
 import { Table, message } from "antd";
+import "../../styles/TableStyles.css";
+
 const Doctors = () => {
   const [doctor, setDoctor] = useState([]);
 
@@ -19,8 +21,8 @@ const Doctors = () => {
       console.log(error);
     }
   };
+
   const handleAccountStatus = async (record, status) => {
-    
     try {
       const res = await axios.post(
         "/api/v1/admin/changeAccountStatus",
@@ -40,18 +42,19 @@ const Doctors = () => {
         window.location.reload();
       }
     } catch (error) {
-      message.error("something went wrong");
+      message.error("Something went wrong");
     }
   };
+
   useEffect(() => {
     getDoctors();
   }, []);
 
-  // ant d table
   const columns = [
     {
       title: "Name",
       dataIndex: "name",
+      width: "30%",
       render: (text, record) => (
         <span>
           {record.firstName} {record.lastName}
@@ -61,37 +64,66 @@ const Doctors = () => {
     {
       title: "Status",
       dataIndex: "status",
+      width: "20%",
+      render: (status) => (
+        <span className={`status-badge status-${status.toLowerCase()}`}>
+          {status}
+        </span>
+      ),
     },
     {
-      title: "Phone number",
+      title: "Phone Number",
       dataIndex: "phone",
+      width: "25%",
     },
     {
       title: "Actions",
       dataIndex: "actions",
+      width: "25%",
       render: (text, record) => (
-        <div className="d-flex">
-          {record.status === "pending" || record.status=="rejected" ? (
+        <div className="action-buttons">
+          {record.status === "pending" || record.status === "rejected" ? (
             <button
-              className="btn btn-success"
+              className="btn-approve"
               onClick={() => handleAccountStatus(record, "approved")}
             >
               Approve
             </button>
           ) : (
-            <button className="btn btn-danger"
-            onClick={() => handleAccountStatus(record, "rejected")}
-            >Reject</button>
+            <button
+              className="btn-reject"
+              onClick={() => handleAccountStatus(record, "rejected")}
+            >
+              Reject
+            </button>
           )}
         </div>
       ),
     },
   ];
+
   return (
-    <Layout>
-      <h1 className="text-center mt-4">Doctors list</h1>
-      <Table columns={columns} dataSource={doctor} />
-    </Layout>
+    <div className="table-container">
+      <Layout>
+        <div className="table-content">
+          <div className="table-header">
+            <h1 className="table-title">Doctors List</h1>
+          </div>
+          <div className="table">
+            <Table
+              columns={columns}
+              dataSource={doctor}
+              rowKey="_id"
+              pagination={{
+                position: ["bottomCenter"],
+                pageSize: 5,
+                showSizeChanger: false,
+              }}
+            />
+          </div>
+        </div>
+      </Layout>
+    </div>
   );
 };
 

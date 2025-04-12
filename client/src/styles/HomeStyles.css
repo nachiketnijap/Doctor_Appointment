@@ -1,22 +1,22 @@
 @import './BaseStyles.css';
 
 .home-container {
+  padding: 1.5rem;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
-  padding: 2rem;
+  background: #f8f9fa;
 }
 
 .home-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .home-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .home-logo {
@@ -43,8 +43,8 @@
 
 .home-title {
   text-align: center;
-  margin-bottom: 0 !important;
-  font-size: 2.5rem !important;
+  margin: 0 !important;
+  font-size: 2rem !important;
   font-weight: 700 !important;
   background: linear-gradient(135deg, #13aa52 0%, #0f8a3f 100%);
   -webkit-background-clip: text;
@@ -57,22 +57,22 @@
 .home-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
+  width: 80px;
+  height: 3px;
   background: linear-gradient(90deg, #13aa52, #0f8a3f);
   border-radius: 2px;
 }
 
 .doctors-grid {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
-/* Dark Theme Overrides */
+/* Dark Theme */
 [data-theme="dark"] .home-container {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: #1a1a1a;
 }
 
 [data-theme="dark"] .home-logo {
@@ -94,7 +94,7 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .home-container {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .home-logo {
@@ -102,7 +102,7 @@
   }
 
   .home-title {
-    font-size: 2.25rem !important;
+    font-size: 1.75rem !important;
   }
 }
 
@@ -112,7 +112,11 @@
   }
 
   .home-content {
-    padding: 0.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .home-header {
+    margin-bottom: 1.5rem;
   }
 
   .home-logo {
@@ -120,7 +124,11 @@
   }
 
   .home-title {
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
+  }
+
+  .doctors-grid {
+    margin-top: 0.75rem;
   }
 }
 
@@ -129,11 +137,19 @@
     padding: 0.75rem;
   }
 
+  .home-content {
+    padding: 0 0.5rem;
+  }
+
+  .home-header {
+    margin-bottom: 1.25rem;
+  }
+
   .home-logo {
     font-size: 2rem;
   }
 
   .home-title {
-    font-size: 1.75rem !important;
+    font-size: 1.25rem !important;
   }
 } 

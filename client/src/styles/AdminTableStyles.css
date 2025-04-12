@@ -1,0 +1,195 @@
+/* Admin Table Container */
+.admin-table-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  padding: 2rem;
+}
+
+.admin-table-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Admin Table Header */
+.admin-table-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.admin-table-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #13aa52 0%, #0d8a3f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* Admin Table */
+.admin-table {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header */
+.admin-table .ant-table-thead > tr > th {
+  background: #f8f9fa !important;
+  color: #13aa52 !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 1rem !important;
+  border-bottom: 2px solid #e9ecef !important;
+}
+
+/* Table Body */
+.admin-table .ant-table-tbody > tr > td {
+  padding: 1rem !important;
+  border-bottom: 1px solid #e9ecef !important;
+  color: #495057;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-approved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-approve,
+.btn-reject {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-approve {
+  background: #13aa52;
+  color: white;
+}
+
+.btn-approve:hover {
+  background: #0d8a3f;
+  transform: translateY(-1px);
+}
+
+.btn-reject {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-reject:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+/* Dark Theme */
+[data-theme="dark"] .admin-table-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+[data-theme="dark"] .admin-table {
+  background: #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .admin-table .ant-table-thead > tr > th {
+  background: #1a1a1a !important;
+  color: #52ffa8 !important;
+  border-bottom: 2px solid #3d3d3d !important;
+}
+
+[data-theme="dark"] .admin-table .ant-table-tbody > tr > td {
+  color: #e0e0e0;
+  border-bottom: 1px solid #3d3d3d !important;
+}
+
+[data-theme="dark"] .admin-table-title {
+  background: linear-gradient(135deg, #52ffa8 0%, #13aa52 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pagination */
+.admin-table .ant-pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.admin-table .ant-pagination-item {
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.admin-table .ant-pagination-item-active {
+  background: #13aa52;
+  border-color: #13aa52;
+}
+
+.admin-table .ant-pagination-item-active a {
+  color: white;
+}
+
+[data-theme="dark"] .admin-table .ant-pagination-item {
+  background: #2d2d2d;
+  border-color: #3d3d3d;
+}
+
+[data-theme="dark"] .admin-table .ant-pagination-item-active {
+  background: #52ffa8;
+  border-color: #52ffa8;
+}
+
+[data-theme="dark"] .admin-table .ant-pagination-item-active a {
+  color: #1a1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-table-container {
+    padding: 1rem;
+  }
+
+  .admin-table {
+    padding: 1rem;
+  }
+
+  .admin-table-title {
+    font-size: 2rem;
+  }
+
+  .admin-table .ant-table-thead > tr > th,
+  .admin-table .ant-table-tbody > tr > td {
+    padding: 0.75rem !important;
+  }
+} 
