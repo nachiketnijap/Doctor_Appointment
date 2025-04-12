@@ -1,0 +1,313 @@
+@import './BaseStyles.css';
+
+/* Dashboard Layout */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  background: var(--primary-dark);
+}
+
+/* Sidebar */
+.sidebar {
+  background: rgba(30, 30, 30, 0.95);
+  padding: var(--spacing-lg);
+  border-right: 1px solid rgba(241, 196, 15, 0.1);
+  position: fixed;
+  width: 280px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(241, 196, 15, 0.1);
+}
+
+.sidebar-header h2 {
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  margin: 0;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu-item {
+  margin-bottom: var(--spacing-sm);
+}
+
+.sidebar-menu-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: var(--transition-fast);
+}
+
+.sidebar-menu-link:hover,
+.sidebar-menu-link.active {
+  background: rgba(241, 196, 15, 0.1);
+  color: var(--accent-yellow);
+}
+
+.sidebar-menu-icon {
+  font-size: var(--font-size-lg);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 280px;
+  padding: var(--spacing-xl);
+  background: var(--primary-dark);
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(19, 170, 82, 0.2);
+  transition: var(--transition-normal);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-icon {
+  font-size: var(--font-size-xl);
+  color: #13aa52;
+}
+
+.card-value {
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-description {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+  background: rgba(40, 40, 40, 0.8);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid rgba(241, 196, 15, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.stat-card-value {
+  font-size: var(--font-size-xxl);
+  color: var(--accent-yellow);
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-card-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Dashboard Table */
+.dashboard-table {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(19, 170, 82, 0.2);
+  margin-bottom: var(--spacing-lg);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.table-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.table-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: var(--spacing-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-bottom: 1px solid rgba(19, 170, 82, 0.2);
+}
+
+.table td {
+  padding: var(--spacing-sm);
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(19, 170, 82, 0.1);
+}
+
+.table tr:hover {
+  background: rgba(19, 170, 82, 0.05);
+}
+
+/* Status Badges */
+.status-badge {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.status-active {
+  background: rgba(19, 170, 82, 0.1);
+  color: #13aa52;
+}
+
+.status-pending {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+}
+
+.status-cancelled {
+  background: rgba(255, 77, 79, 0.1);
+  color: #ff4d4f;
+}
+
+/* Action Buttons */
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.action-button:hover {
+  background: rgba(241, 196, 15, 0.1);
+  color: var(--accent-yellow);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: var(--transition-normal);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--spacing-md);
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card,
+  .dashboard-table {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: var(--spacing-sm);
+  }
+
+  .dashboard-card-header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .appointments-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] .dashboard-card,
+[data-theme="dark"] .dashboard-table {
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid rgba(19, 170, 82, 0.2);
+}
+
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .card-value,
+[data-theme="dark"] .table-title,
+[data-theme="dark"] .table td {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .card-description,
+[data-theme="dark"] .table th {
+  color: #bdc3c7;
+}
+
+[data-theme="dark"] .table tr:hover {
+  background: rgba(19, 170, 82, 0.1);
+} 

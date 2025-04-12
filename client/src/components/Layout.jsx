@@ -6,6 +6,7 @@ import { Badge } from "antd";
 import { useState, useEffect } from "react";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
+
 const Layout = ({ children }) => {
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
@@ -88,9 +89,30 @@ const Layout = ({ children }) => {
                 <div>
                   <button
                     onClick={toggleTheme}
-                    style={{ padding: "10px 20px", cursor: "pointer" }}
+                    className="theme-toggle"
+                    style={{
+                      padding: "8px 16px",
+                      borderRadius: "8px",
+                      border: "1px solid rgba(19, 170, 82, 0.2)",
+                      background: "rgba(255, 255, 255, 0.9)",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      transition: "all 0.3s ease",
+                    }}
                   >
-                    {theme === "light" ? <MdDarkMode /> : <MdLightMode />}
+                    {theme === "light" ? (
+                      <>
+                        <MdDarkMode style={{ color: "#13aa52", fontSize: "20px" }} />
+                        <span style={{ color: "#333333", fontWeight: "500" }}>Dark Mode</span>
+                      </>
+                    ) : (
+                      <>
+                        <MdLightMode style={{ color: "#13aa52", fontSize: "20px" }} />
+                        <span style={{ color: "#ffffff", fontWeight: "500" }}>Light Mode</span>
+                      </>
+                    )}
                   </button>
                 </div>
                 <Link to="/profile">{user?.name}</Link>

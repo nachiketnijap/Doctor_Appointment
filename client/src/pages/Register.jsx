@@ -1,13 +1,16 @@
-import { Form, Input, message } from "antd";
+import { Form, Input, Select, message } from "antd";
 import "../styles/RegisterStyles.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { hideLoading, showLoading } from "../redux/features/alertSlice";
+import { UserOutlined, MailOutlined, LockOutlined, UserSwitchOutlined } from "@ant-design/icons";
 
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { Option } = Select;
+
   //form Handler
   const onfinishHandler = async (values) => {
     try {
@@ -26,33 +29,88 @@ const Register = () => {
       message.error("Something went wrong");
     }
   };
+
   return (
-    <>
+    <div className="register-page">
       <div className="form-container">
-        <Form
-          layout="vertical"
-          onFinish={onfinishHandler}
-          className="register-form"
-        >
-          <h1 className="text-center">Register Form</h1>
-          <Form.Item label="Name" name="name">
-            <Input type="text" required />
-          </Form.Item>
-          <Form.Item label="Email" name="email">
-            <Input type="email" required />
-          </Form.Item>
-          <Form.Item label="Password" name="password">
-            <Input type="password" required />
-          </Form.Item>
-          <Link to="/login" className="m-2">
-            Already a user login here
-          </Link>
-          <button className="btn btn-primary" type="submit">
-            Register
-          </button>
-        </Form>
+        <div className="register-content">
+          <div className="register-header">
+            <h1>Create Account</h1>
+            <p>Join us to manage your medical appointments</p>
+          </div>
+          <Form
+            layout="vertical"
+            onFinish={onfinishHandler}
+            className="register-form"
+          >
+            <Form.Item 
+              label="Name" 
+              name="name"
+              rules={[{ required: true, message: 'Please input your name!' }]}
+            >
+              <Input 
+                prefix={<UserOutlined />} 
+                placeholder="Enter your name"
+              />
+            </Form.Item>
+
+            <Form.Item 
+              label="Email" 
+              name="email"
+              rules={[
+                { required: true, message: 'Please input your email!' },
+                { type: 'email', message: 'Please enter a valid email!' }
+              ]}
+            >
+              <Input 
+                prefix={<MailOutlined />} 
+                placeholder="Enter your email"
+              />
+            </Form.Item>
+
+            <Form.Item 
+              label="Password" 
+              name="password"
+              rules={[
+                { required: true, message: 'Please input your password!' },
+                { min: 6, message: 'Password must be at least 6 characters!' }
+              ]}
+            >
+              <Input.Password 
+                prefix={<LockOutlined />} 
+                placeholder="Enter your password"
+              />
+            </Form.Item>
+
+            <Form.Item 
+              label="Role" 
+              name="role"
+              rules={[{ required: true, message: 'Please select your role!' }]}
+            >
+              <Select
+                placeholder="Select your role"
+                prefix={<UserSwitchOutlined />}
+              >
+                <Option value="doctor">Doctor</Option>
+                <Option value="patient">Patient</Option>
+              </Select>
+            </Form.Item>
+
+            <div className="form-actions">
+              <button className="btn-primary" type="submit">
+                Register
+              </button>
+            </div>
+
+            <div className="links-container">
+              <Link to="/login" className="login-link">
+                Already have an account? Login here
+              </Link>
+            </div>
+          </Form>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
