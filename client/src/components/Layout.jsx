@@ -69,17 +69,15 @@ const Layout = ({ children }) => {
               {SidebarMenu.map((menu) => {
                 const isActive = location.pathname === menu.path;
                 return (
-                  <div key={menu.name}>
-                    <div className={`menu-item ${isActive && "active"}`}>
-                      <i className={menu.icon}></i>
-                      <Link to={menu.path}>{menu.name}</Link>
-                    </div>
-                  </div>
+                  <Link key={menu.name} to={menu.path} className={`menu-item ${isActive && "active"}`}>
+                    <i className={menu.icon}></i>
+                    <span>{menu.name}</span>
+                  </Link>
                 );
               })}
-              <div className={`menu-item`} onClick={handleLogout}>
+              <div className="menu-item" onClick={handleLogout}>
                 <i className="fa-solid fa-right-from-bracket"></i>
-                <Link to="/login">Logout</Link>
+                <span>Logout</span>
               </div>
             </div>
           </div>
