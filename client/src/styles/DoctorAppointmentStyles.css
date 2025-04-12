@@ -1,0 +1,191 @@
+@import './BaseStyles.css';
+
+.doctor-appointments-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  padding: 2rem;
+}
+
+.doctor-appointments-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.doctor-appointments-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.doctor-appointments-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #13aa52 0%, #0f8a3f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.doctor-appointments-table {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.doctor-appointments-table .ant-table {
+  background: transparent;
+}
+
+.doctor-appointments-table .ant-table-thead > tr > th {
+  background: #f8f9fa;
+  color: #13aa52;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e9ecef;
+  padding: 1rem;
+}
+
+.doctor-appointments-table .ant-table-tbody > tr > td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+}
+
+.doctor-appointments-table .ant-table-tbody > tr:hover > td {
+  background: transparent !important;
+}
+
+.doctor-appointments-table .ant-table-pagination {
+  margin: 1.5rem 0 0;
+}
+
+.doctor-appointments-table .ant-pagination-item {
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.doctor-appointments-table .ant-pagination-item-active {
+  background: #13aa52;
+  border-color: #13aa52;
+}
+
+.doctor-appointments-table .ant-pagination-item-active a {
+  color: white;
+}
+
+.doctor-appointments-table .ant-pagination-prev button,
+.doctor-appointments-table .ant-pagination-next button {
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.doctor-appointments-table .btn-success {
+  background: #13aa52;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.doctor-appointments-table .btn-danger {
+  background: #dc3545;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.doctor-appointments-table .btn-success:hover,
+.doctor-appointments-table .btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] .doctor-appointments-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+[data-theme="dark"] .doctor-appointments-table {
+  background: #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .doctor-appointments-table .ant-table-thead > tr > th {
+  background: #1a1a1a;
+  color: #13aa52;
+  border-bottom: 2px solid #404040;
+}
+
+[data-theme="dark"] .doctor-appointments-table .ant-table-tbody > tr > td {
+  color: #e0e0e0;
+  border-bottom: 1px solid #404040;
+}
+
+[data-theme="dark"] .doctor-appointments-table .ant-pagination-item {
+  background: #2d2d2d;
+  border-color: #404040;
+}
+
+[data-theme="dark"] .doctor-appointments-table .ant-pagination-item a {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .doctor-appointments-table .ant-pagination-item-active {
+  background: #13aa52;
+  border-color: #13aa52;
+}
+
+[data-theme="dark"] .doctor-appointments-table .ant-pagination-prev button,
+[data-theme="dark"] .doctor-appointments-table .ant-pagination-next button {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .doctor-appointments-container {
+    padding: 1rem;
+  }
+
+  .doctor-appointments-title {
+    font-size: 2rem;
+  }
+
+  .doctor-appointments-table {
+    padding: 1rem;
+  }
+
+  .doctor-appointments-table .ant-table-thead > tr > th,
+  .doctor-appointments-table .ant-table-tbody > tr > td {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-appointments-container {
+    padding: 0.5rem;
+  }
+
+  .doctor-appointments-title {
+    font-size: 1.75rem;
+  }
+
+  .doctor-appointments-table {
+    padding: 0.75rem;
+  }
+
+  .doctor-appointments-table .ant-table-thead > tr > th,
+  .doctor-appointments-table .ant-table-tbody > tr > td {
+    padding: 0.5rem;
+  }
+} 
