@@ -1,0 +1,193 @@
+/* Appointments Page Styles */
+.appointments-container {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+  padding: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.appointments-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.appointments-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+}
+
+.appointments-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--accent-green), var(--accent-green-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.appointments-table {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(19, 170, 82, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Ant Design Table Overrides */
+.appointments-table .ant-table {
+  background: transparent !important;
+}
+
+.appointments-table .ant-table-thead > tr > th {
+  background: rgba(19, 170, 82, 0.1) !important;
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid rgba(19, 170, 82, 0.2) !important;
+}
+
+.appointments-table .ant-table-tbody > tr > td {
+  border-bottom: 1px solid rgba(19, 170, 82, 0.1) !important;
+}
+
+.appointments-table .ant-table-tbody > tr:hover > td {
+  background: rgba(19, 170, 82, 0.05) !important;
+}
+
+.appointments-table .ant-table-pagination {
+  margin: var(--spacing-lg) 0 0 0 !important;
+}
+
+/* Status Badge Styles */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.status-approved {
+  background: rgba(19, 170, 82, 0.1);
+  color: var(--accent-green);
+}
+
+.status-pending {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+}
+
+.status-rejected {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] .appointments-container {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+[data-theme="dark"] .appointments-table {
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid rgba(82, 255, 168, 0.2);
+}
+
+[data-theme="dark"] .appointments-table .ant-table-thead > tr > th {
+  background: rgba(82, 255, 168, 0.1) !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid rgba(82, 255, 168, 0.2) !important;
+}
+
+[data-theme="dark"] .appointments-table .ant-table-tbody > tr > td {
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(82, 255, 168, 0.1) !important;
+}
+
+[data-theme="dark"] .appointments-table .ant-table-tbody > tr:hover > td {
+  background: rgba(82, 255, 168, 0.1) !important;
+}
+
+[data-theme="dark"] .status-approved {
+  background: rgba(82, 255, 168, 0.1);
+  color: #52ffa8;
+}
+
+[data-theme="dark"] .status-pending {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffd700;
+}
+
+[data-theme="dark"] .status-rejected {
+  background: rgba(255, 82, 82, 0.15);
+  color: #ff5252;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .appointments-container {
+    padding: var(--spacing-md);
+  }
+  
+  .appointments-content {
+    padding: var(--spacing-sm);
+  }
+  
+  .appointments-table {
+    padding: var(--spacing-md);
+  }
+  
+  .appointments-title {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Appointment ID and DateTime Styles */
+.appointment-id {
+  font-family: 'Courier New', monospace;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+}
+
+.appointment-datetime {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.appointment-datetime .date {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.appointment-datetime .time {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+/* Dark Theme Overrides for ID and DateTime */
+[data-theme="dark"] .appointment-id {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .appointment-datetime .date {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .appointment-datetime .time {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Dark Theme Overrides for Heading */
+[data-theme="dark"] .appointments-title {
+  background: linear-gradient(120deg, #52ffa8, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 
