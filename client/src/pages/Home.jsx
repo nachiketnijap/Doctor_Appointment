@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
-import { Row, Col, Typography } from "antd";
+import { Row, Col } from "antd";
 import DoctorsList from "../components/DoctorsList";
-import "../styles/BaseStyles.css";
-
-const { Title } = Typography;
+import "../styles/HomeStyles.css";
+import { FaUserMd } from "react-icons/fa";
 
 const Home = () => {
   const [doctors, setDoctors] = useState([]);
@@ -29,12 +28,13 @@ const Home = () => {
   }, []);
 
   return (
-    <Layout>
-      <div className="home-container">
+    <div className="home-container">
+      <Layout>
         <div className="home-content">
-          <Title level={1} className="home-title">
-            Available Doctors
-          </Title>
+          <div className="home-header">
+           
+            <h1 className="home-title">Available Doctors</h1>
+          </div>
           <div className="doctors-grid">
             <Row gutter={[24, 24]} justify="center">
               {doctors && doctors.map((doctor) => (
@@ -45,8 +45,8 @@ const Home = () => {
             </Row>
           </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </div>
   );
 };
 

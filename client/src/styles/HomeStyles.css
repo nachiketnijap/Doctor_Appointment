@@ -1,0 +1,139 @@
+@import './BaseStyles.css';
+
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  padding: 2rem;
+}
+
+.home-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.home-logo {
+  font-size: 3.5rem;
+  color: #13aa52;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #13aa52 0%, #0f8a3f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.home-title {
+  text-align: center;
+  margin-bottom: 0 !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #13aa52 0%, #0f8a3f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2 !important;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.home-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #13aa52, #0f8a3f);
+  border-radius: 2px;
+}
+
+.doctors-grid {
+  margin-top: 2rem;
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] .home-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+[data-theme="dark"] .home-logo {
+  background: linear-gradient(135deg, #13aa52 0%, #0f8a3f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .home-title {
+  background: linear-gradient(135deg, #13aa52 0%, #0f8a3f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .home-title::after {
+  background: linear-gradient(90deg, #13aa52, #0f8a3f);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .home-container {
+    padding: 1.5rem;
+  }
+
+  .home-logo {
+    font-size: 3rem;
+  }
+
+  .home-title {
+    font-size: 2.25rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .home-content {
+    padding: 0.5rem;
+  }
+
+  .home-logo {
+    font-size: 2.5rem;
+  }
+
+  .home-title {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 0.75rem;
+  }
+
+  .home-logo {
+    font-size: 2rem;
+  }
+
+  .home-title {
+    font-size: 1.75rem !important;
+  }
+} 
