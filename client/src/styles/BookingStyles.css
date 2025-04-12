@@ -1,0 +1,385 @@
+/* Booking Page Styles */
+.booking-container {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+  padding: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.booking-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(19, 170, 82, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.booking-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.doctor-header {
+  text-align: center;
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid rgba(19, 170, 82, 0.2);
+}
+
+.doctor-name {
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--accent-green), var(--accent-green-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--spacing-sm);
+}
+
+.doctor-fees {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.fees-icon {
+  color: var(--accent-green);
+  font-size: var(--font-size-xl);
+}
+
+.timing-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: rgba(19, 170, 82, 0.05);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+}
+
+.timing-label {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.timing-value {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  background: rgba(19, 170, 82, 0.05);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form-label {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.booking-input {
+  width: 100%;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(19, 170, 82, 0.2);
+  background: var(--primary-light);
+  transition: var(--transition-normal);
+  font-size: var(--font-size-md);
+}
+
+.booking-input:hover,
+.booking-input:focus {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 2px rgba(19, 170, 82, 0.1);
+  outline: none;
+}
+
+.booking-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+
+.booking-button {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.booking-button-primary {
+  background: linear-gradient(120deg, var(--accent-green), var(--accent-green-dark));
+  color: var(--white);
+  border: none;
+}
+
+.booking-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] .booking-container {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+[data-theme="dark"] .booking-card {
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid rgba(82, 255, 168, 0.2);
+}
+
+[data-theme="dark"] .booking-input {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(82, 255, 168, 0.2);
+}
+
+[data-theme="dark"] .booking-input:hover,
+[data-theme="dark"] .booking-input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #52ffa8;
+}
+
+/* Override Ant Design DatePicker styles for dark mode */
+[data-theme="dark"] .ant-picker {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(82, 255, 168, 0.2) !important;
+}
+
+[data-theme="dark"] .ant-picker-input > input {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .ant-picker-suffix {
+  color: #52ffa8 !important;
+}
+
+[data-theme="dark"] .ant-picker-clear {
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+[data-theme="dark"] .ant-picker:hover {
+  border-color: #52ffa8 !important;
+}
+
+[data-theme="dark"] .ant-picker-focused {
+  border-color: #52ffa8 !important;
+  box-shadow: 0 0 0 2px rgba(82, 255, 168, 0.1) !important;
+}
+
+[data-theme="dark"] .ant-picker-panel {
+  background: #1a1a1a !important;
+  border-color: rgba(82, 255, 168, 0.2) !important;
+}
+
+[data-theme="dark"] .ant-picker-cell {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .ant-picker-cell-in-view {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .ant-picker-cell:hover:not(.ant-picker-cell-in-view) .ant-picker-cell-inner,
+[data-theme="dark"] .ant-picker-cell:hover:not(.ant-picker-cell-selected):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):not(.ant-picker-cell-range-hover-start):not(.ant-picker-cell-range-hover-end) .ant-picker-cell-inner {
+  background: rgba(82, 255, 168, 0.1) !important;
+}
+
+[data-theme="dark"] .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-color: #52ffa8 !important;
+}
+
+[data-theme="dark"] .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: #52ffa8 !important;
+  color: #1a1a1a !important;
+}
+
+[data-theme="dark"] .ant-picker-header {
+  color: #ffffff !important;
+  border-bottom-color: rgba(82, 255, 168, 0.2) !important;
+}
+
+[data-theme="dark"] .ant-picker-header button {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .ant-picker-header button:hover {
+  color: #52ffa8 !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
+  background: #52ffa8 !important;
+  color: #1a1a1a !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell .ant-picker-time-panel-cell-inner:hover {
+  background: rgba(82, 255, 168, 0.1) !important;
+}
+
+[data-theme="dark"] .doctor-fees,
+[data-theme="dark"] .timing-value {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .timing-label {
+  color: #bdc3c7;
+}
+
+[data-theme="dark"] .timing-info,
+[data-theme="dark"] .booking-form {
+  background: rgba(82, 255, 168, 0.15);
+  border: 1px solid rgba(82, 255, 168, 0.2);
+  box-shadow: 0 4px 15px rgba(82, 255, 168, 0.1);
+}
+
+[data-theme="dark"] .fees-icon {
+  color: #52ffa8;
+}
+
+[data-theme="dark"] .doctor-name {
+  background: linear-gradient(120deg, #52ffa8, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .booking-button-primary {
+  background: linear-gradient(120deg, #52ffa8, #00ff88);
+  color: #1a1a1a;
+  border: none;
+}
+
+[data-theme="dark"] .booking-button-primary:hover {
+  background: linear-gradient(120deg, #00ff88, #52ffa8);
+  box-shadow: 0 4px 15px rgba(82, 255, 168, 0.3);
+}
+
+/* Override Ant Design TimePicker styles for dark mode */
+[data-theme="dark"] .ant-picker-time-panel {
+  background: #1a1a1a !important;
+  border-color: rgba(82, 255, 168, 0.2) !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column {
+  border-left: 1px solid rgba(82, 255, 168, 0.2) !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-selected {
+  background: #52ffa8 !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
+  color: #1a1a1a !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell .ant-picker-time-panel-cell-inner {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell:hover .ant-picker-time-panel-cell-inner {
+  background: rgba(82, 255, 168, 0.1) !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-disabled {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-disabled .ant-picker-time-panel-cell-inner {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-disabled:hover .ant-picker-time-panel-cell-inner {
+  background: transparent !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
+  background: #52ffa8 !important;
+  color: #1a1a1a !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-selected:hover .ant-picker-time-panel-cell-inner {
+  background: #52ffa8 !important;
+  color: #1a1a1a !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner::after {
+  background: #1a1a1a !important;
+}
+
+[data-theme="dark"] .ant-picker-time-panel-column > li.ant-picker-time-panel-cell-selected:hover .ant-picker-time-panel-cell-inner::after {
+  background: #1a1a1a !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booking-container {
+    padding: var(--spacing-md);
+  }
+  
+  .booking-content {
+    padding: var(--spacing-sm);
+  }
+  
+  .booking-actions {
+    flex-direction: column;
+  }
+  
+  .booking-button {
+    width: 100%;
+  }
+  
+  .booking-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .timing-info,
+  .booking-form {
+    padding: var(--spacing-md);
+  }
+} 

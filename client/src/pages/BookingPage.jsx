@@ -1,11 +1,15 @@
 import { useParams } from "react-router-dom";
 import Layout from "../components/Layout";
-import  { useEffect, useState } from "react";
-import { DatePicker, TimePicker, message } from "antd";
+import { useEffect, useState } from "react";
+import { DatePicker, TimePicker, message, Card, Typography, Button } from "antd";
+import { UserOutlined, ClockCircleOutlined, DollarOutlined, CalendarOutlined } from '@ant-design/icons';
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { hideLoading, showLoading } from "../redux/features/alertSlice";
 import axios from "axios";
+import "../styles/BookingStyles.css";
+
+const { Title, Text } = Typography;
 
 const BookingPage = () => {
   const { user } = useSelector((state) => state.user);
@@ -71,7 +75,6 @@ const BookingPage = () => {
   const handleAvailability = async (e) => {
     e.preventDefault();
     try {
-
       const res = await axios.post(
         "/api/v1/user/booking-availability",
         { doctorId: params.doctorId, date, time },
@@ -97,52 +100,85 @@ const BookingPage = () => {
   useEffect(() => {
     getUserData();
   }, []);
+
   return (
     <Layout>
-      <h1 className="text-center">Booking Page</h1>
-      <div className="container m-2">
-        {doctors && (
-          <div>
-            <h4>
-              Dr.{doctors.firstName} {doctors.lastName}
-            </h4>
-            <h4>Fees: {doctors.feesPerConsultation}</h4>
-            <h4>
-              Timings: {doctors.timings && doctors.timings[0]} -{" "}
-              {doctors.timings && doctors.timings[1]}
-            </h4>
-            <div className="d-flex flex-column w-100">
-              <DatePicker
-                className="m-2"
-                format="DD-MM-YYYY"
-                onChange={(value) => {
-                  setIsAvailable(true);
-                  setDate(moment(value).format("DD-MM-YYYY"));
-                }}
-              />
-              <TimePicker
-                className="m-2"
-                format="HH:mm"
-                onChange={(value) => {
-                  setIsAvailable(true);
-                  setTime(moment(value).format("HH:mm"));
-                }}
-              />
-              <button
-              
-                className="btn btn-primary mt-2"
-                onClick={(e) => handleAvailability(e)}
-              >
-                Check Availability
-              </button>
-              {isAvailable && (
-                <button className="btn btn-dark mt-2" onClick={handleBooking}>
-                  Book Now
-                </button>
-              )}
-            </div>
-          </div>
-        )}
+      <div className="booking-container">
+        <div className="booking-content">
+          <Card className="booking-card">
+            {doctors && (
+              <div className="booking-details">
+                <div className="doctor-header">
+                  <Title level={2} className="doctor-name">
+                    <UserOutlined /> Dr. {doctors.firstName} {doctors.lastName}
+                  </Title>
+                  <Text className="doctor-fees">
+                    <DollarOutlined className="fees-icon" />
+                    Consultation Fee: ₹{doctors.feesPerConsultation}
+                  </Text>
+                </div>
+
+                <div className="timing-info">
+                  <Text className="timing-label">
+                    <ClockCircleOutlined /> Available Timings:
+                  </Text>
+                  <Text className="timing-value">
+                    {doctors.timings && doctors.timings[0]} - {doctors.timings && doctors.timings[1]}
+                  </Text>
+                </div>
+
+                <div className="booking-form">
+                  <div className="form-group">
+                    <Text className="form-label">
+                      <CalendarOutlined /> Select Date
+                    </Text>
+                    <DatePicker
+                      className="booking-input"
+                      format="DD-MM-YYYY"
+                      onChange={(value) => {
+                        setIsAvailable(false);
+                        setDate(moment(value).format("DD-MM-YYYY"));
+                      }}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <Text className="form-label">
+                      <ClockCircleOutlined /> Select Time
+                    </Text>
+                    <TimePicker
+                      className="booking-input"
+                      format="HH:mm"
+                      onChange={(value) => {
+                        setIsAvailable(false);
+                        setTime(moment(value).format("HH:mm"));
+                      }}
+                    />
+                  </div>
+
+                  <div className="booking-actions">
+                    <Button
+                      type="primary"
+                      className="booking-button booking-button-primary"
+                      onClick={handleAvailability}
+                    >
+                      Check Availability
+                    </Button>
+                    {isAvailable && (
+                      <Button
+                        type="primary"
+                        className="booking-button booking-button-primary"
+                        onClick={handleBooking}
+                      >
+                        Book Appointment
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </Card>
+        </div>
       </div>
     </Layout>
   );
