@@ -61,8 +61,7 @@ const Login = () => {
               label="Password" 
               name="password"
               rules={[
-                { required: true, message: 'Please input your password!' },
-                { min: 6, message: 'Password must be at least 6 characters!' }
+                { required: true, message: 'Please input your password!' }
               ]}
             >
               <Input.Password

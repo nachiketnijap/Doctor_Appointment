@@ -72,8 +72,8 @@ const Register = () => {
               label="Password" 
               name="password"
               rules={[
-                { required: true, message: 'Please input your password!' },
-                { min: 6, message: 'Password must be at least 6 characters!' }
+                { required: true, message: 'Please input your password!' }
+               
               ]}
             >
               <Input.Password 
@@ -82,7 +82,7 @@ const Register = () => {
               />
             </Form.Item>
 
-            <Form.Item 
+            {/* <Form.Item 
               label="Role" 
               name="role"
               rules={[{ required: true, message: 'Please select your role!' }]}
@@ -94,7 +94,7 @@ const Register = () => {
                 <Option value="doctor">Doctor</Option>
                 <Option value="patient">Patient</Option>
               </Select>
-            </Form.Item>
+            </Form.Item> */}
 
             <div className="form-actions">
               <button className="btn-primary" type="submit">
