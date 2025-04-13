@@ -1,5 +1,5 @@
 import { Form, Input, message } from "antd";
-import "../styles/RegisterStyles.css";
+import "../styles/AuthStyles.css";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -31,7 +31,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-page">
+    <div className="login-page auth-page">
       <div className="form-container">
         <div className="login-content">
           <div className="login-header">

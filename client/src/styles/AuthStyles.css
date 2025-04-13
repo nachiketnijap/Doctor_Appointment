@@ -1,0 +1,173 @@
+/* Auth Pages Styles - Always Light Theme */
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-content {
+  width: 100%;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-form .ant-form-item-label > label {
+  color: #333;
+}
+
+.register-form .ant-input {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.register-form .ant-input:hover,
+.register-form .ant-input:focus {
+  border-color: #13aa52;
+  box-shadow: 0 0 0 2px rgba(19, 170, 82, 0.1);
+}
+
+.register-form .ant-input-password {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.register-form .ant-input-password:hover,
+.register-form .ant-input-password:focus {
+  border-color: #13aa52;
+  box-shadow: 0 0 0 2px rgba(19, 170, 82, 0.1);
+}
+
+.register-form .ant-select-selector {
+  background: #f9f9f9 !important;
+  border: 1px solid #ddd !important;
+}
+
+.register-form .ant-select-selector:hover,
+.register-form .ant-select-selector:focus {
+  border-color: #13aa52 !important;
+  box-shadow: 0 0 0 2px rgba(19, 170, 82, 0.1) !important;
+}
+
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(90deg, #13aa52, #10a04a);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #10a04a, #0d8a3d);
+  transform: translateY(-2px);
+}
+
+.links-container {
+  margin-top: 1.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-link,
+.register-link,
+.forgot-link {
+  color: #13aa52;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.login-link:hover,
+.register-link:hover,
+.forgot-link:hover {
+  color: #10a04a;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .auth-header h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Prevent dark theme from affecting auth pages */
+[data-theme="dark"] .auth-page {
+  background: linear-gradient(135deg, #ffffff, #f5f5f5) !important;
+}
+
+[data-theme="dark"] .form-container {
+  background: white !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme="dark"] .auth-header h1 {
+  color: #333 !important;
+}
+
+[data-theme="dark"] .auth-header p {
+  color: #666 !important;
+}
+
+[data-theme="dark"] .register-form .ant-form-item-label > label {
+  color: #333 !important;
+}
+
+[data-theme="dark"] .register-form .ant-input,
+[data-theme="dark"] .register-form .ant-input-password,
+[data-theme="dark"] .register-form .ant-select-selector {
+  background: #f9f9f9 !important;
+  border-color: #ddd !important;
+  color: #333 !important;
+}
+
+[data-theme="dark"] .login-link,
+[data-theme="dark"] .register-link,
+[data-theme="dark"] .forgot-link {
+  color: #13aa52 !important;
+} 

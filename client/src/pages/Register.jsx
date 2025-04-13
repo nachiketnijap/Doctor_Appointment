@@ -1,5 +1,5 @@
 import { Form, Input, Select, message } from "antd";
-import "../styles/RegisterStyles.css";
+import "../styles/AuthStyles.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -31,7 +31,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register-page">
+    <div className="register-page auth-page">
       <div className="form-container">
         <div className="register-content">
           <div className="register-header">
@@ -102,9 +102,9 @@ const Register = () => {
               </button>
             </div>
 
-            <div className="links-container">
+            <div className="links-container" style={{ justifyContent: 'center' }}>
               <Link to="/login" className="login-link">
-                Already have an account? Login here
+                Already have an account?  Login here
               </Link>
             </div>
           </Form>

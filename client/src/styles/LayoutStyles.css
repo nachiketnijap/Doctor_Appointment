@@ -146,3 +146,17 @@
 [data-theme="dark"] .notification-bell {
   color: #ffffff;
 }
+
+[data-theme="dark"] .theme-toggle {
+  background: rgba(40, 40, 40, 0.8) !important;
+  border: 1px solid rgba(19, 170, 82, 0.2) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(19, 170, 82, 0.1) !important;
+}
+
+[data-theme="dark"] .theme-toggle span {
+  color: #ffffff !important;
+}
