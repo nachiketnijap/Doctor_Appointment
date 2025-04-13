@@ -1,0 +1,176 @@
+/* Notification Page Styles */
+.notification-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.notification-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.notification-header h4 {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.notification-tabs {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification-tabs .ant-tabs-nav {
+  margin-bottom: 1.5rem;
+}
+
+.notification-tabs .ant-tabs-tab {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #13aa52;
+}
+
+.notification-tabs .ant-tabs-tab-active {
+  color: #13aa52 !important;
+  font-weight: 600;
+}
+
+.notification-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #13aa52 !important;
+}
+
+.notification-tabs .ant-tabs-ink-bar {
+  background: #13aa52;
+}
+
+.notification-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.notification-actions h4 {
+  color: #13aa52;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  background: rgba(19, 170, 82, 0.1);
+}
+
+.notification-actions h4:hover {
+  background: rgba(19, 170, 82, 0.2);
+}
+
+.notification-card {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.notification-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #13aa52;
+}
+
+.notification-message {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.empty-state-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] .notification-page {
+  background-color: #141414;
+}
+
+[data-theme="dark"] .notification-header h4 {
+  color: #fff;
+}
+
+[data-theme="dark"] .notification-tabs {
+  background: #1f1f1f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .notification-tabs .ant-tabs-tab {
+  color: #13aa52;
+}
+
+[data-theme="dark"] .notification-tabs .ant-tabs-tab-active {
+  color: #13aa52 !important;
+}
+
+[data-theme="dark"] .notification-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #13aa52 !important;
+}
+
+[data-theme="dark"] .notification-card {
+  background: #1f1f1f;
+  border-color: #333;
+}
+
+[data-theme="dark"] .notification-card:hover {
+  border-color: #13aa52;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .notification-message {
+  color: #fff;
+}
+
+[data-theme="dark"] .notification-actions h4 {
+  color: #13aa52;
+  background: rgba(19, 170, 82, 0.1);
+}
+
+[data-theme="dark"] .notification-actions h4:hover {
+  background: rgba(19, 170, 82, 0.2);
+}
+
+[data-theme="dark"] .empty-state {
+  color: #999;
+}
+
+[data-theme="dark"] .empty-state-icon {
+  color: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .notification-page {
+    padding: 1rem;
+  }
+
+  .notification-tabs {
+    padding: 1rem;
+  }
+
+  .notification-card {
+    padding: 0.75rem;
+  }
+} 
