@@ -119,8 +119,8 @@ const DoctorAppointment = () => {
   ];
 
   return (
-    <div className="table-container">
-      <Layout>
+    <Layout>
+      <div className="table-container">
         <div className="table-content">
           <div className="table-header">
             <h1 className="table-title">Appointments</h1>
@@ -138,8 +138,8 @@ const DoctorAppointment = () => {
             />
           </div>
         </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

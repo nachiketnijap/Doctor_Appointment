@@ -2,10 +2,12 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #ffffff, #f5f5f5);
 }
+
 .layout{
   display: flex;
   min-height: 100vh;
 }
+
 .sidebar{
   width: 250px;
   background: rgba(255, 255, 255, 0.9);
@@ -13,6 +15,9 @@
   padding: var(--spacing-md);
   position: fixed;
   height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1;
   overflow-y: auto;
 }
 
@@ -29,6 +34,39 @@
   background: linear-gradient(120deg, #13aa52, #10a04a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.content{
+  flex: 1;
+  margin-left: 250px;
+  padding: var(--spacing-md);
+}
+
+.header{
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(19, 170, 82, 0.2);
+}
+
+.header-content{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-content a{
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-normal);
+}
+
+.header-content a:hover{
+  color: #13aa52;
 }
 
 .menu{
@@ -67,39 +105,6 @@
   text-decoration: none;
   color: inherit;
   font-weight: 500;
-}
-
-.content{
-  flex: 1;
-  margin-left: 250px;
-  padding: var(--spacing-md);
-}
-
-.header{
-  background: rgba(255, 255, 255, 0.9);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--spacing-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(19, 170, 82, 0.2);
-}
-
-.header-content{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: var(--spacing-md);
-}
-
-.header-content a{
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition-normal);
-}
-
-.header-content a:hover{
-  color: #13aa52;
 }
 
 .badge-notification{
@@ -159,4 +164,26 @@
 
 [data-theme="dark"] .theme-toggle span {
   color: #ffffff !important;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .header {
+    padding: 0 1rem;
+  }
+
+  .body {
+    padding: 1rem;
+  }
 }
