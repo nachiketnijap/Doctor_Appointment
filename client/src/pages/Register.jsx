@@ -1,15 +1,15 @@
-import { Form, Input, Select, message } from "antd";
+import { Form, Input,  message } from "antd";
 import "../styles/AuthStyles.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { hideLoading, showLoading } from "../redux/features/alertSlice";
-import { UserOutlined, MailOutlined, LockOutlined, UserSwitchOutlined } from "@ant-design/icons";
+import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
 
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { Option } = Select;
+ 
 
   //form Handler
   const onfinishHandler = async (values) => {
