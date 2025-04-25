@@ -40,9 +40,6 @@ const BookingPage = () => {
   };
 
   const handleBooking = async () => {
-
-    
-    
     try {
       setIsAvailable(true);
       if (!date && !time) {
@@ -77,8 +74,6 @@ const BookingPage = () => {
 
   const handleAvailability = async (e) => {
     e.preventDefault();
-    console.log("date is::"+date);
-    console.log("time is::"+time);
     try {
       const res = await axios.post(
         "/api/v1/user/booking-availability",
@@ -141,7 +136,7 @@ const BookingPage = () => {
                      className="booking-input"
                       format="DD-MM-YYYY"
                       onChange={(value) => {
-                        console.log("value is::"+value)
+                        
                         setIsAvailable(false);
                         setDate(moment(Number(value)).format("DD-MM-YYYY"));
                       }}
@@ -156,7 +151,7 @@ const BookingPage = () => {
                      className="booking-input"
                       format="HH:mm"
                       onChange={(value) => {
-                        console.log("value is::"+value)
+                       
                         setIsAvailable(false);
                         setTime(moment(Number(value)).format("HH:mm"));
                       }}
