@@ -31,7 +31,7 @@ const ApplyDoctor = () => {
       );
       dispatch(hideLoading());
       if (res.data.success) {
-        message.success("res added successfully");
+        message.success("Applied for Doctor");
         navigate("/");
       } else {
         message.error(res.data.error);
