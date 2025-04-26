@@ -42,7 +42,6 @@ const getAllDoctorsController =async(req,res)=>{
 
 const changeAccountStatusController=async(req,res)=>{
   try {
-    console.log("inside change account status:::::::::::::::::::;");
     
     const {doctorId,status}=req.body
     const doctor =await doctorModel.findByIdAndUpdate(doctorId,{status})
@@ -53,7 +52,6 @@ const changeAccountStatusController=async(req,res)=>{
       message:`Your doctor account request is ${status}`,
       onClickPath:"/notification"
     })
-    console.log("user Data:::::::"+user);
     
     user.isDoctor=status==='approved' ?true:false
     await user.save()
